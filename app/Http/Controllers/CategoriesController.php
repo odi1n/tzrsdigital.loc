@@ -10,7 +10,7 @@ class CategoriesController extends Controller
     //
     public function get_categories()
     {
-        $category = Category::all();
+        $category = Category::paginate(40);
         return view('categories', ['categories' => $category]);
     }
 }

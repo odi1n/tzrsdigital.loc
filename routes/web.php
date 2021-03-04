@@ -18,17 +18,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::name('user.')->group(function () {
-//    Route::view('/', "categories")->middleware('auth')->name('private');
-    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'get_categories'])->
-                middleware('auth')->name('private');
-
-    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'get_all_product'])->
-                middleware('auth')->name('product');
-
-    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_properties'])->
-                middleware('auth')->name('properties');
-
-
     Route::get('/login', function () {
         if (Auth::check()) {
             return redirect(route('user.private'));
@@ -53,4 +42,13 @@ Route::name('user.')->group(function () {
     })->name('registration');
 
     Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
+
+    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'get_categories'])->
+    middleware('auth')->name('private');
+
+    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'get_all_product'])->
+    middleware('auth')->name('product');
+
+    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_properties'])->
+                middleware('auth')->name('properties');
 });

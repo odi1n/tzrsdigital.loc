@@ -1,0 +1,11 @@
+svg {
+    width: 40px;
+}
+
+.flex.justify-between.flex-1 {
+    display: none;
+}
+
+.hidden {
+    text-align: center;
+}

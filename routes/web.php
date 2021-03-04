@@ -18,25 +18,34 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::name('user.')->group(function () {
-    Route::view('/private', 'private')->middleware('auth')->name('private');
+//    Route::view('/', "categories")->middleware('auth')->name('private');
+    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'get_categories'])->
+                middleware('auth')->name('private');
+
+    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'get_all_product'])->
+                middleware('auth')->name('product');
+
+    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_properties'])->
+                middleware('auth')->name('properties');
+
 
     Route::get('/login', function () {
-        if(Auth::check()){
+        if (Auth::check()) {
             return redirect(route('user.private'));
         }
 
         return view('login');
     })->name('login');
 
-    Route::post('/login', [App\Http\Controllers\LoginController::class, 'login']);
+    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 
-    Route::get('/logout', function (){
+    Route::get('/logout', function () {
         Auth::logout();
         return redirect(\route('user.login'));
     })->name('logout');
 
-    Route::get('/registration', function (){
-        if(Auth::check()){
+    Route::get('/registration', function () {
+        if (Auth::check()) {
             return redirect(route('user.private'));
         }
 

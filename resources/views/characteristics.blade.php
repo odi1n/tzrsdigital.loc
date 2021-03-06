@@ -35,19 +35,6 @@
                     </dl>
                     <button class="btn btn-primary w-50">Купить</button>
                 </div>
-                <div class="pb-3">
-                    <h3>Технические характеристики</h3>
-                    <dl>
-                        <div class="row">
-                            @foreach($product->characteristics as $characteristic )
-                                <dt class="col-4">
-                                    <span>{{$characteristic->property}}</span>
-                                </dt>
-                                <dd class="col-8">{{$characteristic->value}}</dd>
-                            @endforeach
-                        </div>
-                    </dl>
-                </div>
             </div>
         </div>
     </div>

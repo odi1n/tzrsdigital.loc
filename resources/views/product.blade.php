@@ -69,7 +69,7 @@
             @foreach($products as $product)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 box-shadow p-3">
                     <div class="card text-center mh-100">
-                        <a href="{{route('user.characteristics', ['category'=>$product->category_id,'product_id'=>$product->id])}}">
+                        <a href="{{ route('user.characteristics', ['category'=>$product->category_id, 'product_id'=>$product->id]) }}">
                             <img class="card-img-top application__img" src="https://place-hold.it/250x250" alt="">
                         </a>
                         <div class="card_body m-3">

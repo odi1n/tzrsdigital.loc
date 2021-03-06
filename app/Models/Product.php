@@ -7,10 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public function characteristics()
-    {
-        return $this->belongsToMany(Characteristics::class);
-    }
-
     use HasFactory;
 }

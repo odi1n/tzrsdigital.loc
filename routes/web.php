@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::name('user.')->group(function () {
     Route::get('/login', function () {
         if (Auth::check()) {
-            return redirect(route('user.private'));
+            return redirect(route('user.index'));
         }
 
         return view('login');
@@ -35,7 +35,7 @@ Route::name('user.')->group(function () {
 
     Route::get('/registration', function () {
         if (Auth::check()) {
-            return redirect(route('user.private'));
+            return redirect(route('user.index'));
         }
 
         return view('registration');
@@ -44,11 +44,11 @@ Route::name('user.')->group(function () {
     Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
 
     Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'get_categories'])->
-    middleware('auth')->name('private');
+    middleware('auth')->name('index');
 
     Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'get_all_product'])->
     middleware('auth')->name('product');
 
-    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_properties'])->
-                middleware('auth')->name('properties');
+    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_characteristics'])->
+                middleware('auth')->name('characteristics');
 });

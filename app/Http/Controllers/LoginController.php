@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if (Auth::check()) {
-            return redirect()->intended(route('user.private'));
+            return redirect()->intended(route('user.index'));
         }
 
         $formFields = $request->only(['email', 'password']);
@@ -26,7 +26,7 @@ class LoginController extends Controller
         }
 
         if (Auth::attempt($formFields)) {
-            return redirect()->intended(route('user.private'));
+            return redirect()->intended(route('user.index'));
         }
 
         return redirect(route('user.login'))->withErrors([

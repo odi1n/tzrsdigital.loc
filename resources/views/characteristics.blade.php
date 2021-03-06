@@ -39,11 +39,11 @@
                     <h3>Технические характеристики</h3>
                     <dl>
                         <div class="row">
-                            @foreach($product->properties as $propertie )
+                            @foreach($product->characteristics as $characteristic )
                                 <dt class="col-4">
-                                    <span>{{$propertie->property}}</span>
+                                    <span>{{$characteristic->property}}</span>
                                 </dt>
-                                <dd class="col-8">{{$propertie->value}}</dd>
+                                <dd class="col-8">{{$characteristic->value}}</dd>
                             @endforeach
                         </div>
                     </dl>

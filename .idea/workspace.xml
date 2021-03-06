@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e87903d8-971c-45c0-b470-4f835597f6a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/categories.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +188,8 @@
       <option name="presentableId" value="Default" />
       <updated>1614768264859</updated>
       <workItem from="1614768265886" duration="23733000" />
-      <workItem from="1614804181065" duration="28721000" />
+      <workItem from="1614804181065" duration="28876000" />
+      <workItem from="1614883596201" duration="3572000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки">
       <created>1614868757348</created>
@@ -203,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614868757348</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="app.blade.php - добавил сноску yield style&#10;categories.blade.php &#10;- добавил секцию стилей&#10;- добавил пагинацию&#10;- сделал активную кнопку &quot;перейти&quot;&#10;Добавил categories.css правит генерирующуюся пагинацию&#10;CategoriesController.php - сделал пагинацию&#10;web.php - вынес вниз главные ссылки">
+      <created>1614883553385</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614883553385</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,10 +221,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки" />
+    <MESSAGE value="app.blade.php - добавил сноску yield style&#10;categories.blade.php &#10;- добавил секцию стилей&#10;- добавил пагинацию&#10;- сделал активную кнопку &quot;перейти&quot;&#10;Добавил categories.css правит генерирующуюся пагинацию&#10;CategoriesController.php - сделал пагинацию&#10;web.php - вынес вниз главные ссылки" />
+    <option name="LAST_COMMIT_MESSAGE" value="app.blade.php - добавил сноску yield style&#10;categories.blade.php &#10;- добавил секцию стилей&#10;- добавил пагинацию&#10;- сделал активную кнопку &quot;перейти&quot;&#10;Добавил categories.css правит генерирующуюся пагинацию&#10;CategoriesController.php - сделал пагинацию&#10;web.php - вынес вниз главные ссылки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614771944930">
@@ -257,17 +261,17 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="674" y="428" key="NewPhpFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614807062714" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1614868761178">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1614883555237">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614868761178" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614883555237" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614866565255">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614866565255" />
-    <state x="496" y="233" key="run.anything.popup" timestamp="1614864556455">
+    <state x="496" y="233" key="run.anything.popup" timestamp="1614987189561">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1614864556455" />
+    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1614987189561" />
   </component>
 </project>

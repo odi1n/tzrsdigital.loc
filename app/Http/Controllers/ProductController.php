@@ -11,15 +11,13 @@ use mysql_xdevapi\Exception;
 
 class ProductController extends Controller
 {
-    //
+    /* Транслитерация
+     * https://webstool.ru/translitizacziya-url-v-laravel.html
+     */
+
     public function get_all_product($category)
     {
-        $products = Product::where('category_id',$category)->paginate(40);
-
-        if ($products->count() == 0) {
-            return redirect(route('user.index'));
-        }
-
+        $products = Product::where('category_id', $category)->paginate(40);
         return view('product', ['products' => $products]);
     }
 

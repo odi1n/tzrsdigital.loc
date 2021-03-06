@@ -20,18 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e87903d8-971c-45c0-b470-4f835597f6a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tzrsdigital.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tzrsdigital.loc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Properties.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Characteristics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_03_210619_create_properties_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_03_211218_create_product_properties_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_03_210619_create_properties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_06_004010_create_characteristics_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/properties.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/characteristics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +157,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pFA3M2U2wGirqK1SR1Dm63Fy7T" />
@@ -199,7 +196,7 @@
       <updated>1614768264859</updated>
       <workItem from="1614768265886" duration="23733000" />
       <workItem from="1614804181065" duration="28876000" />
-      <workItem from="1614883596201" duration="6156000" />
+      <workItem from="1614883596201" duration="7773000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки">
       <created>1614868757348</created>
@@ -222,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614990217636</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Изменил private  на index&#10;Изменил properties.blade.php на characteristics.blade.php">
+      <created>1615065888401</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615065888401</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +248,8 @@
     <MESSAGE value="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки" />
     <MESSAGE value="app.blade.php - добавил сноску yield style&#10;categories.blade.php &#10;- добавил секцию стилей&#10;- добавил пагинацию&#10;- сделал активную кнопку &quot;перейти&quot;&#10;Добавил categories.css правит генерирующуюся пагинацию&#10;CategoriesController.php - сделал пагинацию&#10;web.php - вынес вниз главные ссылки" />
     <MESSAGE value="product.blade.php - добавил свойства" />
-    <option name="LAST_COMMIT_MESSAGE" value="product.blade.php - добавил свойства" />
+    <MESSAGE value="Изменил private  на index&#10;Изменил properties.blade.php на characteristics.blade.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил private  на index&#10;Изменил properties.blade.php на characteristics.blade.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614771944930">
@@ -283,10 +288,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="674" y="428" key="NewPhpFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614807062714" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1614990218824">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615065891935">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1614990218824" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615065891935" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614866565255">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

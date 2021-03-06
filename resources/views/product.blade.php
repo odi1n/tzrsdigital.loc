@@ -1,6 +1,10 @@
 @extends('app')
 
-@section('title') Товары - {{ $products->first()->category_id }} @endsection('title)
+@section('title') Товары
+@if(count($products))
+    - {{ $products->first()->category_id }}
+@endif
+@endsection('title)
 
 @section('content')
     <div class="container">
@@ -16,14 +20,14 @@
                             <div class="form-group row align-content-center">
                                 <label for="priceFrom" class=" col-2 form-label">От:</label>
                                 <div class="col-10">
-                                    <input type="number" id="priceFrom">
+                                    <input type="number" id="priceFrom" name="priceFrom" value="{{ old('priceFrom') }}">
                                 </div>
                             </div>
 
                             <div class="form-group row align-content-center">
                                 <label for="priceTo" class="col-2 form-label">До:</label>
                                 <div class="col-10">
-                                    <input type="number" id="priceTo">
+                                    <input type="number" id="priceTo" name="priceTo" value="{{ old('priceTo') }}">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +67,6 @@
             <!--properties-->
 
             @foreach($products as $product)
-                {{--                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 box-shadow p-3">--}}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 box-shadow p-3">
                     <div class="card text-center mh-100">
                         <a href="{{route('user.characteristics', ['category'=>$product->category_id,'product_id'=>$product->id])}}">

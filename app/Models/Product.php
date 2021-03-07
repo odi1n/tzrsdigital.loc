@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    public static function getPropertiesValue($product_id)
+    {
+        return PropertiesValue::all()->where('product_id', $product_id);
+    }
+
     use HasFactory;
 }

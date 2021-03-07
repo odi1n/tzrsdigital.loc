@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->integer('count')->default(0);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->timestamps();
         });
     }
 

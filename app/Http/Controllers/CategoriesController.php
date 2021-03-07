@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CategoriesController extends Controller
 {
     //
-    public function get_categories()
+    public function getCategories()
     {
         $category = Category::paginate(40);
         return view('categories', ['categories' => $category]);

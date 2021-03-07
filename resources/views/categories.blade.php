@@ -17,7 +17,9 @@
                                 <h4 class="card-title text-uppercase">{{$category->name}}</h4>
                             </div>
                             <div class="card-image">
-                                <img src="https://place-hold.it/450" class="img-fluid mb-3" alt="">
+                                <a href="{{ route('user.product', ['category'=>$category->id]) }}">
+                                    <img src="https://place-hold.it/450" class="img-fluid mb-3" alt="">
+                                </a>
                             </div>
                             <div class="card-text">
                                 <h5 class="text-truncate mb-2">{{$category->description}}</h5>

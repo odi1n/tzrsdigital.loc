@@ -43,12 +43,12 @@ Route::name('user.')->group(function () {
 
     Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
 
-    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'get_categories'])->
+    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'getCategories'])->
     middleware('auth')->name('index');
 
-    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'get_all_product'])->
+    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'getAllProduct'])->
     middleware('auth')->name('product');
 
-    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'get_characteristics'])->
+    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'getCharacteristics'])->
                 middleware('auth')->name('characteristics');
 });

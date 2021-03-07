@@ -1,9 +1,9 @@
 @extends('app')
 
-@section('title') Товары
-@if(count($products))
-    - {{ $products->first()->category_id }}
-@endif
+@section('title')
+    @if(count($products))
+        {{ $products->first()->category_id }}
+    @endif
 @endsection('title)
 
 @section('content')
@@ -67,6 +67,10 @@
             <!--properties-->
 
             @foreach($products as $product)
+                <?php
+                $properties_values = \App\Models\PropertiesValue::getByProductId($product->id);
+                ?>
+
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 box-shadow p-3">
                     <div class="card text-center mh-100">
                         <a href="{{ route('user.characteristics', ['category'=>$product->category_id, 'product_id'=>$product->id]) }}">
@@ -74,14 +78,27 @@
                         </a>
                         <div class="card_body m-3">
                             <h4 class="card-title text-uppercase text-truncate">{{$product->name}}</h4>
+                            <h5 class="card-subtitle text-center pb-1">
+                                <span>{{ $product->price }} руб.</span>
+                            </h5>
+
                             <p class="card-subtitle">Кол-во:
                                 <span>{{$product->count}}</span>
                             </p>
-                            <p class="card-subtitle">Цена:
-                                <span>{{ $product->price }} руб.</span>
-                            </p>
+
+                            @foreach($properties_values as $properties_value)
+                                <?php
+                                $properties = \App\Models\PropertiesValue::getProperties($properties_value->properties_id);
+                                ?>
+                                <p class="card-subtitle">{{ $properties->name }}:
+                                    <span>{{ $properties_value->value }}</span>
+                                </p>
+                            @endforeach
+
                             <a class="btn btn-primary btn-sm w-100"
-                               href="{{route('user.characteristics', ['category'=>$product->category_id,'product_id'=>$product->id])}}">Перейти</a>
+                               href="{{route('user.characteristics', ['category'=>$product->category_id,
+                                                                      'product_id'=>$product->id])}}">Перейти</a>
+
                         </div>
                     </div>
                 </div>

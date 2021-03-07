@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCharacteristicsTable extends Migration
+class CreatePropertiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateCharacteristicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('characteristics', function (Blueprint $table) {
+        Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('property');
-            $table->string('value');
-            $table->timestamps();
+            $table->string('name')->nullable(false);
         });
     }
 
@@ -28,6 +26,6 @@ class CreateCharacteristicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('characteristics');
+        Schema::dropIfExists('properties');
     }
 }

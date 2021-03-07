@@ -22,12 +22,9 @@
     <list default="true" id="e87903d8-971c-45c0-b470-4f835597f6a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Characteristics.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_06_004010_create_characteristics_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_06_004138_create_product_characteristics_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Characteristics.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Properties.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_06_004010_create_characteristics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_06_214402_create_properties_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/characteristics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/characteristics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +193,7 @@
       <updated>1614768264859</updated>
       <workItem from="1614768265886" duration="23733000" />
       <workItem from="1614804181065" duration="28876000" />
-      <workItem from="1614883596201" duration="12141000" />
+      <workItem from="1614883596201" duration="15075000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлены:&#10;- категории&#10;- товары&#10;- свойства&#10;Созданы страницы:&#10;product.blade.php&#10;properties.blade.php&#10;Добавлены ссылки">
       <created>1614868757348</created>
@@ -233,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615066999795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Убрал характеристики товара">
+      <created>1615073735531</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615073735531</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +261,8 @@
     <MESSAGE value="product.blade.php - добавил свойства" />
     <MESSAGE value="Изменил private  на index&#10;Изменил properties.blade.php на characteristics.blade.php" />
     <MESSAGE value="Если нет товаров то выводит страницу без товаров, а не редирект на главную&#10;Если есть товары то выводи название категории в title&#10;Добавил laravel/helpers для транслитерации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Если нет товаров то выводит страницу без товаров, а не редирект на главную&#10;Если есть товары то выводи название категории в title&#10;Добавил laravel/helpers для транслитерации" />
+    <MESSAGE value="Убрал характеристики товара" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал характеристики товара" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614771944930">
@@ -296,10 +301,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="674" y="428" key="NewPhpFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1614807062714" />
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615067000976">
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2" timestamp="1615073737230">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615067000976" />
+    <state x="432" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1615073737230" />
     <state x="657" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614866565255">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

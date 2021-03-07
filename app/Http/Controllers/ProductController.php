@@ -23,7 +23,14 @@ class ProductController extends Controller
 
     public function get_characteristics($category, $product_id)
     {
-        $product = Product::find($product_id);
+        $product = Product::join('properties_value', 'properties_value.id', '=', 'products.properties_value_id')
+            ->select('products.*',)
+            ->selectRaw('properties_value.value as properties_value_value',
+//                'properties_value.properties_id as properties_value_properties_id',
+            )
+            ->leftJoin('properties', 'properties.id', '=', 'properties_id')
+            ->selectRaw('properties.name as properties_name')
+            ->find($product_id);
         if ($product == null) {
             return redirect(route('user.index'));
         }

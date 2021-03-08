@@ -44,21 +44,19 @@ Route::name('user.')->group(function () {
 
     Route::post('/registration', [\App\Http\Controllers\RegisterController::class, 'save']);
 
-    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'getCategories'])->
-    middleware('auth')->name('index');
+    Route::get('/', [\App\Http\Controllers\CategoriesController::class, 'getCategories'])
+        ->middleware('auth')->name('index');
 
-    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'getAllProduct'])->
-    middleware('auth')->name('product');
+    Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'getAllProduct'])
+        ->middleware('auth')->name('product');
 
-    Route::get('/{category}/filter/',function (Request  $request){
-        return $request;
-    })->
-    middleware('auth')->name('filter');
+    Route::get('/{category}/filter/', [\App\Http\Controllers\ProductController::class, 'filter'])
+        ->middleware('auth')->name('filter');
 
-    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'getCharacteristics'])->
-    middleware('auth')->name('characteristics');
+    Route::get('/{category}/search/', [\App\Http\Controllers\ProductController::class, 'search'])
+        ->middleware('auth')->name('search');
 
-    Route::get('/test', function () {
-        return "ok";
-    });
+    Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'getCharacteristics'])
+        ->middleware('auth')->name('characteristics');
+
 });

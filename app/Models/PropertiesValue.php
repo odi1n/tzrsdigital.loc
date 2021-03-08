@@ -28,5 +28,29 @@ class PropertiesValue extends Model
         return Properties::find($idProperties);
     }
 
+    public static function getPropertiesSorting($category_id)
+    {
+        $properties_values = PropertiesValue::join('products', 'properties_values.product_id', 'products.id')
+            ->join('properties', 'properties_values.properties_id', 'properties.id')
+            ->select('properties_values.*',
+                'products.category_id',
+                'properties.name as properties_name')
+            ->where('category_id', '=', $category_id)
+            ->get()
+            ->unique('value', 'properties_name');
+
+        $arrProperties = array();
+        foreach ($properties_values as $properties_value) {
+            $name = $properties_value->properties_name;
+            $value = $properties_value->value;
+
+            if (!array_key_exists($name, $arrProperties))
+                $arrProperties[$name] = [];
+
+            array_push($arrProperties[$name], ['values' => $value, 'properties_id' => $properties_value->id]);
+        }
+        return $arrProperties;
+    }
+
     use HasFactory;
 }

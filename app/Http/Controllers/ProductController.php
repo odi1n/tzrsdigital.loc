@@ -9,6 +9,7 @@ use App\Models\PropertiesValue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use mysql_xdevapi\Exception;
+use Illuminate\Support\Collection;
 use function Sodium\add;
 
 class ProductController extends Controller
@@ -19,35 +20,11 @@ class ProductController extends Controller
 
     public function getAllProduct($category_id)
     {
-        $products = Product::where('category_id', $category_id)
-            ->join('categories', 'products.category_id', 'categories.id')
-            ->select('products.*', 'categories.name as categories_name');
-
-        $properties_values = PropertiesValue::
-        join('products', 'properties_values.product_id', 'products.id')
-            ->join('properties', 'properties_values.properties_id', 'properties.id')
-            ->select('properties_values.*',
-                'products.category_id',
-                'properties.name as properties_name')
-            ->where('category_id', '=', $category_id)
-            ->get()
-            ->unique('value', 'properties_name');
-
-        $arrProperties = array();
-        foreach ($properties_values as $properties_value) {
-            $name = $properties_value->properties_name;
-            $value = $properties_value->value;
-
-            if (!array_key_exists($name, $arrProperties))
-                $arrProperties[$name] = [];
-
-            array_push($arrProperties[$name], ['values' => $value, 'properties_id' => $properties_value->id]);
-        }
-
-//        dd($products);
+        $products = Product::getByProductCategory($category_id);
+        $properties_values = PropertiesValue::getPropertiesSorting($category_id);
 
         return view('product', ['products' => $products->paginate(40),
-            'properties_values' => $arrProperties,
+            'properties_values' => $properties_values,
         ]);
     }
 
@@ -56,12 +33,36 @@ class ProductController extends Controller
         $product = Product::find($product_id);
         $propertiesValues = Product::getPropertiesValue($product_id);
 
-//        if ($product == null) {
-//            return redirect(route('user.index'));
-//        }
-
-//        return dump($propertiesValues);
         return view('characteristics', ['product' => $product,
             'properties_values' => $propertiesValues]);
+    }
+
+    public function search(Request $request)
+    {
+        $searchFields = $request->get('q');
+        $category_id = 1;
+
+        $properties_values = PropertiesValue::getPropertiesSorting($category_id);
+
+        if ($searchFields == null)
+            $products = Product::getByProductCategory($category_id);
+        else
+            $products = Product::getByProductCategory($category_id)
+                ->where('products.name',  $searchFields);
+
+        return view('product', ['products' => $products->paginate(40),
+            'properties_values' => $properties_values,
+        ]);
+    }
+
+    public function filter(Request $request){
+        $jsonRequest = response()->json($request->all());
+//        $jsonRequest = $request->json()->all();
+        $test = $jsonRequest->original;
+        foreach ($test['parameter'] as $key=>$value) {
+            dump($value);
+        }
+        dd($test);
+        return "test";
     }
 }

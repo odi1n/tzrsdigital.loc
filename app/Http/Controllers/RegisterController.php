@@ -59,19 +59,12 @@ class RegisterController extends Controller
 
         }
 
-//        if($validateFields['password'] != $validateFields['password_confirmation']){
-//
-//            return redirect(route('user.registration'))->withErrors([
-//                'password_confirm' => 'Пароли должны совпадать'
-//            ]);
-//        }
         $user = User::create($validateFields);
 
         if ($user) {
             Auth::login($user);
             return redirect(route('user.index'));
         }
-
 
         return redirect(route('user.login'))->withErrors([
             'formError' => 'Произошла ошибка'

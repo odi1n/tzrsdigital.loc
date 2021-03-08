@@ -34,7 +34,8 @@ class PropertiesValue extends Model
             ->join('properties', 'properties_values.properties_id', 'properties.id')
             ->select('properties_values.*',
                 'products.category_id',
-                'properties.name as properties_name')
+                'properties.name as properties_name',
+                'properties.id as properties_id')
             ->where('category_id', '=', $category_id)
             ->get()
             ->unique('value', 'properties_name');

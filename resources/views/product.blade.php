@@ -32,7 +32,8 @@
                                                            name="parameter[{{$properties_name}}][]"
                                                            value="{{ $key['properties_id'] }}">
                                                     <label class="custom-control-label"
-                                                           for="parameter{{ $key['properties_id'] }}">
+                                                           for="parameter{{ $key['properties_id'] }}"
+                                                           name="parameter[{{$properties_name}}]">
                                                         {{ $key['values'] }}</label>
                                                 </div>
                                             </li>

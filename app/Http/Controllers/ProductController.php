@@ -40,7 +40,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $searchFields = $request->get('q');
-        $category_id = 1;
+        $category_id = $request['category'];
 
         $properties_values = PropertiesValue::getPropertiesSorting($category_id);
 
@@ -48,21 +48,40 @@ class ProductController extends Controller
             $products = Product::getByProductCategory($category_id);
         else
             $products = Product::getByProductCategory($category_id)
-                ->where('products.name',  $searchFields);
+                ->where('products.name', $searchFields);
 
         return view('product', ['products' => $products->paginate(40),
             'properties_values' => $properties_values,
         ]);
     }
 
-    public function filter(Request $request){
+    public function filter(Request $request)
+    {
         $jsonRequest = response()->json($request->all());
-//        $jsonRequest = $request->json()->all();
-        $test = $jsonRequest->original;
-        foreach ($test['parameter'] as $key=>$value) {
-            dump($value);
+        $json = $jsonRequest->original;
+
+        $properties_values = PropertiesValue::getPropertiesSorting($request['category']);
+        $products = Product::getByProductCategory($request['category'])
+            //            ->get();
+        ;
+
+        if (array_key_exists('priceFrom', $json))
+            $products = $products->where('price', '>=', (int)$json['priceFrom']);
+
+        if (array_key_exists('priceTo', $json))
+            $products = $products->where('price', '<=', (int)$json['priceTo']);
+
+        if (array_key_exists('count', $json))
+            $products = $products->where('count', '>=', (int)$json['count']);
+
+        if (array_key_exists('parameter', $json)) {
+            foreach ($json['parameter'] as $key => $value) {
+                dump($value);
+            }
         }
-        dd($test);
-        return "test";
+
+        return view('product', ['products' => $products->paginate(40),
+            'properties_values' => $properties_values,
+        ]);
     }
 }

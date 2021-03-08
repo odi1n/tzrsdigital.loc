@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,15 @@ Route::name('user.')->group(function () {
     Route::get('/{category}', [\App\Http\Controllers\ProductController::class, 'getAllProduct'])->
     middleware('auth')->name('product');
 
+    Route::get('/{category}/filter/',function (Request  $request){
+        return $request;
+    })->
+    middleware('auth')->name('filter');
+
     Route::get('/{category}/{product_id}', [\App\Http\Controllers\ProductController::class, 'getCharacteristics'])->
-                middleware('auth')->name('characteristics');
+    middleware('auth')->name('characteristics');
+
+    Route::get('/test', function () {
+        return "ok";
+    });
 });

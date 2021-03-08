@@ -14,7 +14,8 @@ class PropertiesValue extends Model
 
     public static function getByProductId($product_id)
     {
-        return PropertiesValue::where('product_id','=', $product_id)->get();
+        return PropertiesValue::where('product_id', '=', $product_id)
+            ->get();
     }
 
     public static function getProduct($idProduct)
